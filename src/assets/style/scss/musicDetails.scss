@@ -1,0 +1,842 @@
+body {
+  $orange: #ffa928;
+  $redOrange: #fc8f22;
+  $white: #fff;
+  $red: #f54444;
+  $gry: #464646;
+  $filter-orang:invert(83%) sepia(39%) saturate(4484%) hue-rotate(38deg)
+    brightness(269%) contrast(101%);
+
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+  ::-webkit-scrollbar-track {
+    background:rgb(53, 53, 53);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #fc8f22;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fc8f22;
+  }
+  .baner {
+    width: 91%;
+    height: 100%;
+    margin-left: 3%;
+    background-image: url(../../image/pic/musicDetailCover.png);
+    background-size: cover;
+    position: relative;
+    background-position: center center;
+    border-radius: 16px;
+    direction: rtl;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    .banner__cover {
+      width: 25%;
+      margin: 40px 30px 40px 0px;
+      .banner__play_icon {
+        border-radius: 50%;
+        background-color: $orange;
+        margin-right: 0;
+        padding: 20px;
+        position: absolute;
+        right: 1%;
+        bottom: 10%;
+      }
+    }
+    .banner__info {
+      width: 30%;
+      .banner__info__icons {
+        display: flex;
+      }
+      .banner__info__icons img {
+        width: 20px;
+        height: 20px;
+        padding: 0px 5px;
+      }
+      .banner__info__icons_line2 {
+        display: flex;
+        .banner__music__like,
+        .banner__music__share,
+        .banner__music__more {
+          width: 15%;
+          margin-top: 15px;
+          cursor: pointer;
+        }
+        .banner__music__more {
+          position: relative;
+        }
+        & .music_detail__modal {
+          position: absolute;
+          width: 180px;
+          height: 121px;
+          background-color: rgb(41, 41, 41);
+          top: 19px;
+          right: 7px;
+          line-height: 30px;
+          border-radius: 16px;
+          padding: 10px;
+          font-size: 14px;
+          span {
+            position: absolute;
+          }
+        }
+        .music_detail__modal__add img,
+        .music_detail__modal__edit img,
+        .music_detail__modal__delete img {
+          padding: 4px 2px 3px 8px;
+          cursor: pointer;
+        }
+        .banner__music__share .banner__pic {
+          width: 30px;
+        }
+      }
+    }
+    .banner__lyrics {
+      height: 90%;
+      width: 40%;
+      .banner__lyrics__text {
+        margin: 22px -1px 20px 20px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: justify;
+      }
+      .showLess {
+        transform: rotate(180deg);
+        margin-right: 10px;
+      }
+      .banner__lyrics__loadMore {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: right;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+      .banner__lyrics__loadMore img {
+        // transform: rotate(180deg);
+        margin-right: 10px;
+      }
+      .readLess img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .music_like {
+    span {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 0;
+        top: 0;
+        background-repeat: no-repeat;
+        background-image: url(../../image/icons/linear/heart.png);
+      }
+    }
+    .music_like_radio {
+      display: none;
+
+      &:checked + span::before {
+        background-image: url(../../image/icons/Bold/heart.png);
+      }
+    }
+  }
+  .arttist_part {
+    width: 90%;
+    margin: auto;
+    color: $white;
+    .banner__pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 16px;
+    }
+    .artist_musics_details {
+      width: 200px;
+      height: 300px;
+      display: inline-grid;
+      margin: 0px 20px;
+    }
+    .artist_musics__tittle {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0px;
+      text-align: right;
+      color: white;
+      margin: 30px 0px;
+    }
+    .artist_musics__info {
+      height: 130px;
+      display: flex;
+      flex-direction: row;
+    }
+    & p {
+      width: 90%;
+    }
+    & img {
+      height: 20px;
+      width: 10%;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .moodal__edit_playlist_back {
+    width: 100%;
+    height: 100vh;
+    background: #29292963;
+    z-index: 111;
+    position: fixed;
+    top: 0;
+    .moodal__create_playlist {
+      background: rgba(53, 53, 53);
+      position: absolute;
+      top: 3%;
+      left: 30%;
+      height: 70%;
+      width: 378px;
+      border-radius: 16px;
+      padding: 32px;
+      overflow-y: scroll;
+    }
+    .moodal__create_playlist__buttons__action {
+      background-color: #b1661b;
+      width: 226px;
+      display: flex;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 10px;
+      color: $white;
+      cursor: pointer;
+      .playlist__create {
+        padding: 7px;
+      }
+      .playlist__edit {
+        padding: 7px;
+        background-color: $orange;
+        border-radius: 7px;
+      }
+    }
+    .moodal__create_playlist__name {
+      .music__name__tittle {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: white;
+        margin: 20px 0px;
+      }
+
+      .music__name__select__name {
+        display: flex;
+        flex-direction: row-reverse;
+        .music__name__input {
+          text-align: right;
+          background: #464646;
+          width: 100%;
+          border-radius: 10px;
+          border: unset;
+          height: 50px;
+        }
+        & :focus {
+          outline: unset;
+          outline-offset: unset;
+          padding-right: 10px;
+        }
+        .music__name__button {
+          width: 20%;
+          height: 20px;
+          padding: 10px 20px;
+          text-align: center;
+          color: $white;
+          background-color: $redOrange;
+          border-radius: 10px 0px 0px 10px;
+        }
+      }
+
+      .music__selcted {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 60px;
+        margin-top: 20px;
+        color: white;
+        border-bottom: 2px solid #444444;
+        padding-bottom: 20px;
+        .music_cover {
+          width: 50px;
+          height: 50px;
+        }
+        .details_wrapper {
+          width: 30%;
+          height: 100%;
+          margin-right: 10px;
+          .music__name {
+            color: $redOrange;
+            font-weight: 700;
+          }
+          .music_singer {
+            color: #a3a3a3;
+          }
+        }
+      }
+
+      .music__similar {
+        .music__similar__tittle {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 24px;
+          text-align: right;
+          color: rgb(255, 255, 255);
+          margin: 10px 0px;
+        }
+        .music__similar__musics {
+          border-radius: 6px;
+        }
+      }
+      .music__similar__music {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 5px 5px;
+        background-color: #444444;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        .music_cover {
+          width: 50px;
+          height: 50px;
+        }
+        .details_wrapper {
+          width: 40%;
+          height: 100%;
+          margin-right: 10px;
+          .music__name {
+            color: $white;
+            font-weight: 700;
+          }
+          .music_singer {
+            color: #a3a3a3;
+          }
+        }
+        .playlist__add {
+          color: $redOrange;
+          font-size: 14px;
+          align-self: center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .moodal__create_playlist__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    border-bottom: 1px solid #444444;
+    padding-bottom: 20px;
+    cursor: pointer;
+  }
+  .playlist__close {
+    position: absolute;
+    left: 5%;
+    color: #999999;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 0px 8px;
+    top: 5%;
+    line-height: 24px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  .moodal__select_playlist {
+    background: rgba(53, 53, 53);
+    position: absolute;
+    top: 3%;
+    left: 30%;
+    height: 80%;
+    width: 378px;
+    border-radius: 16px;
+    padding: 32px;
+    overflow-y: scroll;
+  }
+  .moodal__select_playlist__buttons__action {
+    background-color: #b1661b;
+    width: 226px;
+    display: inline-flex;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 10px;
+    color: $white;
+    cursor: pointer;
+    .playlist__create {
+      padding: 7px;
+      background-color: $orange;
+      border-radius: 7px;
+    }
+    .playlist__edit {
+      padding: 7px;
+    }
+  }
+  .moodal__select_playlist__name {
+    .music__name__tittle {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: white;
+      margin: 20px 0px;
+    }
+
+    .music__name__select__name {
+      display: flex;
+      flex-direction: row-reverse;
+      .music__name__input {
+        text-align: right;
+        background: #464646;
+        width: 70%;
+        border-radius: 0px 10px 10px 0px;
+        border: unset;
+      }
+      & :focus {
+        outline: unset;
+        outline-offset: unset;
+        padding-right: 10px;
+      }
+      .music__name__button {
+        width: 20%;
+        height: 20px;
+        padding: 10px 20px;
+        text-align: center;
+        color: $white;
+        background-color: $redOrange;
+        border-radius: 10px 0px 0px 10px;
+      }
+    }
+
+    .music__selcted {
+      display: flex;
+      flex-direction: row-reverse;
+      height: 60px;
+      margin-top: 20px;
+      color: white;
+      border-bottom: 2px solid #444444;
+      padding-bottom: 20px;
+      .music_cover {
+        width: 50px;
+        height: 50px;
+      }
+      .details_wrapper {
+        width: 30%;
+        height: 100%;
+        margin-right: 10px;
+        .music__name {
+          color: $redOrange;
+          font-weight: 700;
+        }
+        .music_singer {
+          color: #a3a3a3;
+        }
+      }
+    }
+
+    .music__similar {
+      .music__similar__tittle {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: right;
+        color: white;
+        margin: 10px 0px;
+      }
+      .music__similar__musics {
+        background-color: #444444;
+        border-radius: 6px;
+      }
+    }
+    .music__similar__music {
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 5px 5px;
+
+      .music_cover {
+        width: 50px;
+        height: 50px;
+      }
+      .details_wrapper {
+        width: 40%;
+        height: 100%;
+        margin-right: 10px;
+        .music__name {
+          color: $white;
+          font-weight: 700;
+        }
+        .music_singer {
+          color: #a3a3a3;
+        }
+      }
+      .playlist__add {
+        color: $redOrange;
+        font-size: 14px;
+        align-self: center;
+        cursor: pointer;
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////@at-root
+
+  .carousel {
+    position: relative;
+    margin-top: 26px;
+  }
+
+  .carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 200px;
+  }
+
+  .carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+    display: flex;
+    margin-left: 20px;
+  }
+
+  .carousel-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+  }
+
+  .carousel-item .banner__pic {
+    display: block;
+    border-radius: 20px;
+    padding-left: 30px;
+    img {
+      width: 150px;
+      height: 150px;
+    }
+    .carousel-item__text {
+      color: $white;
+    }
+    .carousel-item__more {
+      display: flex;
+      margin-top: -10%;
+    }
+    .moreBtn {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .carousel-control {
+    background: #acacac;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 42px;
+    border: 1px solid;
+    position: absolute;
+    top: 40%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 1;
+  }
+
+  .carousel-control.prev {
+    left: 0%;
+  }
+
+  .carousel-control.next {
+    right: 0%;
+  }
+
+  .carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+  }
+
+  #carousel-1:checked ~ .control-1,
+  #carousel-2:checked ~ .control-2,
+  #carousel-3:checked ~ .control-3 {
+    display: block;
+  }
+
+  .carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .carousel-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+  }
+
+  .carousel-bullet:hover {
+    color: #aaaaaa;
+  }
+
+  #carousel-1:checked
+    ~ .control-1
+    ~ .carousel-indicators
+    li:nth-child(1)
+    .carousel-bullet,
+  #carousel-2:checked
+    ~ .control-2
+    ~ .carousel-indicators
+    li:nth-child(2)
+    .carousel-bullet,
+  #carousel-3:checked
+    ~ .control-3
+    ~ .carousel-indicators
+    li:nth-child(3)
+    .carousel-bullet {
+    color: #428bca;
+  }
+
+  #title {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Open Sans", sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33),
+      -1px 0px 2px rgba(255, 255, 255, 0);
+  }
+
+  .moodal__edit_playlist_music {
+    width: 100%;
+    height: 100vh;
+    background: #29292963;
+    z-index: 111;
+    position: fixed;
+    top: 0;
+    .song_info {
+      width: 100%;
+      height: 775px;
+
+      .song_info-tittle {
+        font-weight: 700;
+        font-size: 20px;
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      .song_info-inside {
+        height: 500px;
+        background: #353535;
+        border-radius: 16px;
+        width: 80%;
+        color: white;
+        margin: auto;
+        position: relative;
+        margin-top: 40px;
+        .song_info__details {
+          display: flex;
+          flex-direction: row-reverse;
+
+          .col {
+            width: 33%;
+            overflow: hidden;
+            padding: 20px 20px 0px 0px;
+
+            .detail__lable {
+              font-style: normal;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 24px;
+            }
+
+            .detaile__input {
+              margin: 11px 0px;
+              width: 90%;
+              height: 50px;
+              background: rgba(70, 70, 70, 0.3);
+              border-radius: 16px;
+              border: unset;
+              padding: 8px;
+            }
+
+            .detaile__cover {
+              width: 100%;
+              margin: 0% 20px;
+              height: 95%;
+              border-radius: 16px;
+            }
+
+            .detaile__file_back {
+              bottom: 9px;
+              background: rgba(70, 70, 70, 0.5);
+              width: 97%;
+              height: 53px;
+              position: absolute;
+              left: 19px;
+              border-radius: 0px 0px 27px 16px;
+            }
+            .detaile__file {
+              position: absolute;
+              width: 160%;
+              height: 56px;
+              left: -26%;
+            }
+
+            .detaile__upload {
+              width: 91%;
+              position: absolute;
+              left: 10%;
+              bottom: 10%;
+              cursor: pointer;
+            }
+
+            .customfile__input::-webkit-file-upload-button {
+              visibility: hidden;
+            }
+
+            .customfile__input::before {
+              content: "بارگذاری عکس";
+              cursor: pointer;
+            }
+
+            input.customfile__input {
+              position: absolute;
+              left: 46%;
+              bottom: 40%;
+              font-family: "thisSpecialFont";
+            }
+
+            .customfile__input:hover::before {
+              border-color: black;
+            }
+
+            .customfile__input:active::before {
+              background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+            }
+
+            img.customfile__icon {
+              width: 24px;
+              position: absolute;
+              left: 40%;
+              top: 20%;
+            }
+          }
+        }
+
+        .lyrics_tittle {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 24px;
+          padding: 10px 24px;
+        }
+
+        .lyrics__text {
+          margin: 0px 24px 24px 24px;
+          background: rgba(70, 70, 70, 0.3);
+          border-radius: 16px;
+          padding: 16px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 20px;
+          color: #999999;
+        }
+
+        .song_info-buttons {
+          display: flex;
+
+          .button.button-save {
+            background: linear-gradient(
+              106.97deg,
+              #fe8a48 -11.29%,
+              #fda53e 91.8%
+            );
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+  .modal_delete__music {
+    width: 100%;
+    height: 100vh;
+    background: #29292963;
+    z-index: 111;
+    position: fixed;
+    top: 0;
+    .modal_delete__music__body {
+      width: 40%;
+      height: 140px;
+      background: rgba(53, 53, 53);
+      position: absolute;
+      left: 27%;
+      top: 30%;
+      border-radius: 10px;
+      p {
+        color: $white;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: right;
+        margin-right: 20px;
+        margin-top: 30px;
+      }
+      .music__delete__btn {
+        display: flex;
+        flex-direction: row-reverse;
+        .modal_delete__music__delete {
+          width: 60%;
+          text-align: center;
+          background: $red;
+          padding: 10px;
+          border-radius: 5px;
+          margin: 10px;
+          color: $white;
+        }
+        .modal_delete__music__cansel {
+          width: 30%;
+          text-align: center;
+          background: $gry;
+          padding: 10px;
+          border-radius: 5px;
+          margin: 10px;
+          color: $white;
+        }
+      }
+    }
+  }
+}

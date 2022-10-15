@@ -1,0 +1,304 @@
+body {
+  $orange: #ffa928;
+  $redOrange: #fc8f22;
+  $white: #fff;
+  $red: #f54444;
+  $gry: #464646;
+  $filter-orang:invert(83%) sepia(39%) saturate(4484%) hue-rotate(38deg)
+    brightness(269%) contrast(101%);
+
+  .sign-buttons {
+    height: 64px;
+    width: 20%;
+    display: flex;
+    padding: 30px 40px 0px 30px;
+    color: $orange;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    direction: rtl;
+    cursor: pointer;
+    .sign-buttons__signin {
+      width: 40%;
+      font-size: 12px;
+      padding: 13px;
+      border-radius: 0px 10px 10px 0px;
+      margin-bottom: 20px;
+      background: rgba(70, 70, 70, 0.4);
+      color: white;
+      line-height: 14px;
+      text-align: center;
+      margin-left: -11px;
+    }
+    .sign-buttons__register {
+      background: linear-gradient(108.1deg, #fe8a48 -11.1%, #fda53e 112.32%);
+      width: 50%;
+      font-size: 14px;
+      padding: 13px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: white;
+      line-height: 15px;
+    }
+  }
+  .slider-premium {
+    display: flex;
+    direction: rtl;
+    .slider {
+      width: 71%;
+      height: 260px;
+      margin-right: 25px;
+      background-image: url(../../image/pic/homayon.png);
+      background-size: cover;
+      background-position: bottom;
+      border-radius: 16px;
+      background-repeat: initial;
+      margin-left: 15px;
+      position: relative;
+      .slider-img {
+        position: absolute;
+        left: 0;
+        height: 284px;
+        bottom: 0;
+        border-radius: 0px 0px 0px 16px;
+      }
+      .slider-text__p1 {
+        font-family: IranNastaliq;
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 24px;
+        color: white;
+        margin-top: 70px;
+        text-align: right;
+        margin-right: 30%;
+      }
+      .slider-text__p2 {
+        color: white;
+        font-family: Peyda;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0px;
+        text-align: right;
+        margin-right: 30%;
+      }
+      .slider-text__p3 {
+        color: white;
+        font-family: Peyda;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        text-align: right;
+        margin-right: 30%;
+        line-height: 0;
+      }
+    }
+    .premium {
+      width: 23%;
+      height: 260px;
+      border-radius: 16px;
+      background: rgba(70, 70, 70, 0.4);
+      color: white;
+      text-align: center;
+      .premium-img {
+        width: 70px;
+        height: 70px;
+        margin: 20px;
+      }
+      .premium-title {
+        font-family: Peyda;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+      .premium-price {
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 24px;
+        margin: 20px;
+      }
+      .premium-desc {
+        color: #999999;
+        font-size: 14px;
+        margin: 20px;
+      }
+    }
+  }
+  .playlist-tabs {
+    display: flex;
+    direction: rtl;
+    margin-top: 20px;
+    .playlist {
+      width: 71%;
+      margin-right: 25px;
+      background-size: cover;
+      background-position: bottom;
+      border-radius: 16px;
+      background-repeat: initial;
+      margin-left: 15px;
+      .playlist-tittle {
+        display: flex;
+        margin-bottom: 20px;
+        .playlist-tittle__header {
+          width: 50%;
+          color: white;
+        }
+        .playlist-tittle__showmore {
+          width: 50%;
+          color: $orange;
+          text-align: left;
+          cursor: pointer;
+        }
+      }
+      .playlist-back {
+        background: rgba(70, 70, 70, 0.4);
+        display: flex;
+        flex-direction: row;
+        padding: 24px;
+        gap: 25px;
+        border-radius: 24px;
+        height: 205px;
+        color: white;
+        text-align: right;
+        overflow: hidden;
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+      .playlist-list {
+        cursor: pointer;
+        .playlist-list__img {
+          width: 160px;
+          height: 160px;
+          border-radius: 16px;
+        }
+        .playlist-list__music {
+          line-height: 40px;
+          font-weight: 600;
+          margin-top: -5px;
+        }
+        .playlist-list__singer {
+          line-height: 0;
+          font-size: 15px;
+          color: #9999;
+        }
+      }
+      .special-list {
+        margin-bottom: 100px;
+      }
+    }
+    .tabs {
+      width: 23%;
+      height: 260px;
+      .tabs-buttons {
+        display: flex;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        .tabs-buttons__history {
+          width: 40%;
+          font-size: 12px;
+          padding: 13px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          background: rgba(70, 70, 70, 0.4);
+          margin-left: 3px;
+        }
+        .active-tab {
+          width: 59%;
+        }
+        .tabs-buttons__favorite {
+          background: linear-gradient(
+            108.1deg,
+            #fe8a48 -11.1%,
+            #fda53e 112.32%
+          );
+          width: 50%;
+          font-size: 12px;
+          padding: 13px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+        }
+      }
+      .tabs-lists {
+        width: 100%;
+        height: 550px;
+        border-radius: 16px;
+        background: rgba(70, 70, 70, 0.4);
+        color: white;
+        text-align: center;
+        .tabs-lists__music {
+          display: flex;
+          padding: 10px 10px 0px 10px;
+          .tabs-music__cover {
+            width: 30%;
+            .music__cover__img {
+              width: 100%;
+            }
+          }
+          .tabs-music__info {
+            width: 70%;
+            margin-right: 10px;
+
+            .music__info__name {
+              text-align: right;
+              padding: 0px 10px 0px 10px;
+              font-size: 15px;
+              font-weight: 600;
+            }
+            .music-icon {
+              display: flex;
+              gap: 7px;
+              height: 14px;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .music_like {
+    span {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 0;
+        top: 0;
+        background-repeat: no-repeat;
+        background-image: url(../../image/icons/Bold/heart-fill.png);
+      }
+    }
+    .music_like_radio {
+      display: none;
+
+      &:checked + span::before {
+        background-image: url(../../image/icons/Bold/heart-orange.png);
+      }
+    }
+  }
+
+  .music_play {
+    span {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 0;
+        top: 0;
+        background-repeat: no-repeat;
+        background-image: url(../../image/icons/Bold/play-fill.png);
+      }
+    }
+    .music_play_radio {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+body {
+  $orange: #ffa928;
+  $redOrange: #fc8f22;
+  $white: #fff;
+  $red: #f54444;
+  $gry: #464646;
+  $filter-orang:invert(83%) sepia(39%) saturate(4484%) hue-rotate(38deg)
+    brightness(269%) contrast(101%);
+
+  .loginPage {
+    display: flex;
+    direction: rtl;
+    background-image: url(../../image/pic/loginImg.png);
+    background-position: left bottom;
+    background-size: 90% 100%;
+    background-repeat: no-repeat;
+    .leftside {
+      width: 25%;
+      height: 93vh;
+      background: #262727;
+      text-align: center;
+      padding: 20px;
+      img.leftside-logo {
+        width: 60px;
+      }
+      .loginform {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #9999;
+        margin-bottom: 15px;
+        span {
+          color: wheat;
+        }
+        .loginform__label {
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 15px;
+          text-align: right;
+          color: white;
+          display: block;
+        }
+        .loginform__input1,
+        .loginform__input2 {
+          height: 23px;
+          width: 86%;
+          border-radius: 5px;
+          padding: 8px 16px 8px 16px;
+          background: #46464680;
+          box-shadow: unset;
+          border: unset;
+          border: unset;
+          margin: 8px 0px;
+        }
+        .loginform__list {
+          height: 43px;
+          color: white;
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px 0px 10px 0px;
+          background: #46464680;
+          box-shadow: unset;
+          border: unset;
+          border: unset;
+          margin: 8px 0px;
+          font-family: "peyda";
+        }
+        .loginform__button {
+          font-family: "peyda";
+          background: linear-gradient(
+            106.97deg,
+            #fe8a48 -11.29%,
+            #fda53e 91.8%
+          );
+          width: 100%;
+          height: 37px;
+          border: unset;
+          color: white;
+          border-radius: 5px;
+          margin-top: 13px;
+          margin-bottom: 15px;
+          cursor: pointer;
+        }
+        .loginform__register {
+          color: white;
+          font-size: 14px;
+          span {
+            font-weight: 700;
+          }
+        }
+        .loginform__forgetpass {
+          color: $orange;
+        }
+      }
+      .leftside-google {
+        color: white;
+        font-size: 15px;
+        height: 30px;
+        background: #313131;
+        border-radius: 5px;
+        width: 90%;
+        margin: auto;
+        line-height: 30px;
+        margin-bottom: 20px;
+      }
+      .leftside-desc {
+        color: white;
+        font-size: 12px;
+        text-align: right;
+        width: 90%;
+        padding-right: 20px;
+        margin: auto;
+        position: relative;
+        .leftside-desc__p1::before {
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-radius: 10px;
+          background: $orange;
+          position: absolute;
+          right: 7px;
+          top: 6px;
+        }
+        .leftside-desc__p2::before {
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-radius: 10px;
+          background: $orange;
+          position: absolute;
+          right: 7px;
+          top: 36px;
+        }
+      }
+    }
+    .rigtside {
+      width: 75%;
+      margin-top: 17%;
+      .rigtside-tittle {
+        font-size: 48px;
+        font-weight: 800;
+        text-align: center;
+        color: white;
+      }
+      .rigtside-desc {
+        color: white;
+        width: 57%;
+        margin: auto;
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+  }
+}
